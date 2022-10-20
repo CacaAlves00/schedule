@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from './redux/theme'
 import Header from './components/Header/Header'
 import Login from './pages/Login/Login'
+import Calendar from './pages/Calendar/Calendar'
 import './App.scss'
 import Schedule from './pages/Schedule/Schedule'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
+import ScheduleFormPage from './pages/ScheduleFormPage/ScheduleFormPage'
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/schedule" element={<Schedule />} />
+        <Route path="/schedule-form" element={<ScheduleFormPage />} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </article>

@@ -8,14 +8,20 @@ import ScheduleTable from '../../components/ScheduleTable/ScheduleTable'
 import useHandleNotLoggedIn from '../../hooks/useHandleNotLoggedIn'
 import { ThemeStateInterface } from '../../redux/theme'
 import './Schedule.scss'
+import { useNavigate } from 'react-router-dom'
 
 function Schedule() {
 
   const [date, setDate] = useState<Date>(new Date())
-  const [showForm, setShowForm] = useState<boolean>(false)
 
   const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
   useHandleNotLoggedIn()
+
+  const navigate = useNavigate()
+
+  function openForm() {
+    navigate('/schedule-form')
+  }
 
   return (
     <article id="schedule">
@@ -33,40 +39,31 @@ function Schedule() {
         }}
       >
 
-        {!showForm &&
-          <>
-            <header>
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-                >
-                <AiOutlinePlus
-                  className="icon"
-                  size={48}
-                  fill={primaryColor}
-                  onClick={() => setShowForm(true)}
-                  />
-              </motion.div>
+        <header>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <AiOutlinePlus
+              className="icon"
+              size={48}
+              fill={primaryColor}
+              onClick={openForm}
+            />
+          </motion.div>
 
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.4 }}
-              >
-                <DateDisplay date={date} setDate={setDate} />
-              </motion.div>
-            </header>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <DateDisplay date={date} setDate={setDate} />
+          </motion.div>
+        </header>
 
-            <main>
-              <ScheduleTable date={date} />
-            </main>
-          </>
-        }
+        <main>
+          <ScheduleTable date={date} />
+        </main>
 
-        {showForm &&
-          <aside>
-            <ScheduleForm onSubmit={() => setShowForm(false)} />
-          </aside>
-        }
       </motion.div>
     </article>
   )
