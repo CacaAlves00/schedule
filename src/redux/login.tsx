@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 export interface LoginStateInterface {
     login: {
         loggedIn: boolean,
-        email: string
+        username: string
     }
 }
 
@@ -11,17 +11,17 @@ export const loginSlice = createSlice({
     name: 'login',
     initialState: {
         loggedIn: false,
-        email: null
+        username: null
     },
     reducers: {
         login: (state, action) => {
             state.loggedIn = true
-            state.email = action.payload
+            state.username = action.payload
         },
 
         logout: (state) => {
             state.loggedIn = false
-            state.email = null
+            state.username = null
         }
 
     }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { motion } from 'framer-motion'
 import { ThemeStateInterface } from '../../redux/theme'
 import './LogginButtonContainer.scss'
 
@@ -17,26 +18,37 @@ function LogginButtonContainer(props: LoginButtonContainerPropsInterface) {
 
     return (
         <div id='button-container'>
-            <Button
-                onClick={()  => props.handleSignIn()}
-                style={{
-                    color: primaryColor,
-                    borderColor: primaryColor,
-                    backgroundColor: 'transparent'
-                }}
+            <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.5 }}
             >
-                Sign In
-            </Button>
 
-            <Button variant='success'
-                onClick={()  => props.handleLogin()}
-                style={{
-                    backgroundColor: secondaryColor,
-                    borderColor: 'transparent'
-                }}
+                <Button
+                    onClick={() => props.handleSignIn()}
+                    style={{
+                        color: primaryColor,
+                        borderColor: primaryColor,
+                        backgroundColor: 'transparent'
+                    }}
+                >
+                    Sign In
+                </Button>
+            </motion.div>
+
+            <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.5 }}
             >
-                Login
-            </Button>
+                <Button variant='success'
+                    onClick={() => props.handleLogin()}
+                    style={{
+                        backgroundColor: secondaryColor,
+                        borderColor: 'transparent'
+                    }}
+                >
+                    Login
+                </Button>
+            </motion.div>
         </div>
     )
 }

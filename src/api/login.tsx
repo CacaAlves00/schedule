@@ -3,14 +3,14 @@ interface LoginAPIAnswerInterface {
     message?: string
 }
 
-export function login(email: string, password: string): LoginAPIAnswerInterface {
-    return {
+export async function login(username: string, password: string): Promise<LoginAPIAnswerInterface> {
+    return await {
         successful: true,
     }
 }
 
-export function signIn(email: string, password: string): LoginAPIAnswerInterface {
-    return {
+export async function signIn(username: string, password: string): Promise<LoginAPIAnswerInterface> {
+    return await {
         successful: false,
         message: 'E-mail already registered'
     }

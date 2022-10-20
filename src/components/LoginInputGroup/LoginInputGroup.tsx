@@ -5,13 +5,13 @@ import { ThemeStateInterface } from '../../redux/theme'
 import './LoginInputGroup.scss'
 
 interface LoginInputGroupPropsInterface {
-    email: string,
-    setEmail: Function,
+    username: string,
+    setUsername: Function,
     password: string,
     setPassword: Function
 }
 
-function LoginInputGroup({email, setEmail, password, setPassword}: LoginInputGroupPropsInterface) {
+function LoginInputGroup({username, setUsername, password, setPassword}: LoginInputGroupPropsInterface) {
 
     const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
     const secondaryColor = useSelector((state: ThemeStateInterface) => state.theme.secondaryColor)
@@ -28,13 +28,13 @@ function LoginInputGroup({email, setEmail, password, setPassword}: LoginInputGro
                         borderColor: primaryColor
                     }}
                 >
-                    E-mail
+                    Username
                 </InputGroup.Text>
                 <Form.Control
                     aria-label='Default'
                     aria-describedby='inputGroup-sizing-default'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     style={{
                         color: primaryColor,
                         backgroundColor,

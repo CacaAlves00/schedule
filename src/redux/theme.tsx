@@ -21,7 +21,7 @@ export const themeSlice = createSlice({
         setThemeToDefault: (state) => {
             state.theme = 'default'
             state.primaryColor = '#011627'
-            state.secondaryColor = '#5890FF'
+            state.secondaryColor = '#246eb9'
             state.backgroundColor = '#F6F7F8'
         },
 

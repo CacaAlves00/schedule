@@ -1,14 +1,21 @@
 #schedule {
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  position: relative;
+  padding-top: 10vh;
 
-        width: 100%;
-        padding-top: 10vh;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .icon {
-            cursor: pointer;
-        }
+    width: 100%;
+
+    .icon {
+      cursor: pointer;
     }
+  }
+
+  main {
+    max-height: 60vh;
+    overflow-y: scroll;
+  }
 }
