@@ -1,0 +1,10 @@
+#header-offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    width: 70%;
+
+    & > button {
+        margin-top: 3vh;
+    }
+}

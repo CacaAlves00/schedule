@@ -1,0 +1,31 @@
+.home-card {
+  width: 90%;
+  height: 40vh;
+  border-radius: 5px;
+  border: 2px solid;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding-bottom: 2vh;
+  box-sizing: border-box;
+
+  & > * {
+    flex: 1;
+    height: 40%;
+    width: 60%;
+  }
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 2.6rem;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-bottom: 5vh;
+    width: 100%;
+  }
+}
