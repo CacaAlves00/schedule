@@ -1,5 +1,7 @@
 import React from 'react'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { useSelector } from 'react-redux'
+import { ThemeStateInterface } from '../../redux/theme'
 import './DateDisplay.scss'
 
 interface DatePropsInterface {
@@ -7,18 +9,50 @@ interface DatePropsInterface {
     setDate: Function
 }
 
-function Date({ date, setDate }: DatePropsInterface) {
+function DateDisplay({ date, setDate }: DatePropsInterface) {
+  
+  const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor )
+
+  function getDateFormated(): string {
+    return date.toLocaleDateString('en-us', {
+      year: "numeric", month: "short", day: "numeric"
+    })
+  }
+  
+  function increaseOneDay() {
+    const newDate: Date = new Date(date.getTime())
+    newDate.setDate(date.getDate() + 1)
+    setDate(newDate)
+  }
+
+  function decreaseOneDay() {
+    const newDate: Date = new Date(date.getTime())
+    newDate.setDate(date.getDate() - 1)
+    setDate(newDate)
+  }
+
   return (
-    <div>
-        <MdKeyboardArrowLeft />
+    <div id="date-display" style={{borderColor: primaryColor}}>
+        <MdKeyboardArrowLeft 
+          className="icon" 
+          fill={primaryColor} 
+          size={32}
+          onClick={decreaseOneDay}  
+        />
 
-        <div>
-
+        <div id="display">
+          {getDateFormated() }
         </div>
 
-        <MdKeyboardArrowRight />
+        <MdKeyboardArrowRight
+          className="icon" 
+          fill={primaryColor} 
+          size={32}
+          onClick={increaseOneDay}  
+        />
     </div>
   )
+
 }
 
-export default Date
+export default DateDisplay
