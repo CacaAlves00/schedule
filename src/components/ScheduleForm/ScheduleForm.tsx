@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { addScheduleItem } from '../../api/schedule'
 import { ThemeStateInterface } from '../../redux/theme'
 import './ScheduleForm.scss'
@@ -64,12 +65,21 @@ function ScheduleForm() {
           onChange={(e: any) => setDescription(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit"
-        style={{ backgroundColor: secondaryColor }}
-        onClick={handleSubmit}
+      <motion.div
+        whileHover={{
+          scale: 1.03
+        }}
+        transition={{
+          duration: 0.4
+        }}
       >
-        Submit
-      </Button>
+        <Button variant="primary" type="submit"
+          style={{ backgroundColor: secondaryColor }}
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
+      </motion.div>
     </Form>
   )
 }

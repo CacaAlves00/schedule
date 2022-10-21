@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import CalendarForm from '../../components/CalendarForm /CalendarForm'
 import useHandleNotLoggedIn from '../../hooks/useHandleNotLoggedIn'
 import { ThemeStateInterface } from '../../redux/theme'
@@ -20,7 +20,21 @@ function CalendarFormPage() {
                 borderColor: `${primaryColor}`
             }}
         >
-            <CalendarForm />
+            <motion.div
+                initial={{
+                    scale: 0.97,
+                    opacity: 0.4
+                }}
+                animate={{
+                    scale: 1,
+                    opacity: 1
+                }}
+                transition={{
+                    duration: 0.7
+                }}
+            >
+                <CalendarForm />
+            </motion.div>
         </article>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { addScheduleItem } from '../../api/schedule'
+import { motion } from 'framer-motion'
 import DatePicker from 'react-datepicker'
 import { ThemeStateInterface } from '../../redux/theme'
 import './CalendarForm.scss'
@@ -53,12 +53,21 @@ function CalendarForm() {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit"
-        style={{ backgroundColor: secondaryColor }}
-        onClick={handleSubmit}
+      <motion.div
+        whileHover={{
+          scale: 1.03
+        }}
+        transition={{
+          duration: 0.4
+        }}
       >
-        Submit
-      </Button>
+        <Button variant="primary" type="submit"
+          style={{ backgroundColor: secondaryColor }}
+          onClick={handleSubmit}
+        >
+          Submit
+        </Button>
+      </motion.div>
     </Form>
   )
 }

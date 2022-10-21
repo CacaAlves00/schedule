@@ -12,6 +12,8 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import ScheduleFormPage from './pages/ScheduleFormPage/ScheduleFormPage'
 import CalendarFormPage from './pages/CalendarFormPage/CalendarFormPage'
 import SignIn from './pages/SignIn/SignIn'
+import Diet from './pages/Diet/Diet'
+import DietFormPage from './pages/DietFormPage/DietFormPage'
 
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
         <Route path="/schedule-form" element={<ScheduleFormPage />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/calendar-form" element={<CalendarFormPage />} />
+        <Route path="/diet" element={<Diet />} />
+        <Route path="/diet-form" element={<DietFormPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </article>
