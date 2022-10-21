@@ -49,7 +49,7 @@ function Login() {
     }
 
     return (
-        <article id='form'>
+        <article id='login'>
             <motion.div
                 initial={{
                     scale: 0.97,
@@ -62,6 +62,7 @@ function Login() {
                 transition={{
                     duration: 0.7
                 }}
+                style={{ height: '100%' }}
             >
 
                 {

@@ -21,23 +21,6 @@ function SignInButtonContainer({ handleSignIn }: SignInButtonContainerPropsInter
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5 }}
             >
-
-                <Button
-                    onClick={() => handleSignIn()}
-                    style={{
-                        color: primaryColor,
-                        borderColor: primaryColor,
-                        backgroundColor: 'transparent'
-                    }}
-                >
-                    Sign In
-                </Button>
-            </motion.div>
-
-            <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-            >
                 <Button variant='success'
                     onClick={() => handleSignIn()}
                     style={{
@@ -45,7 +28,7 @@ function SignInButtonContainer({ handleSignIn }: SignInButtonContainerPropsInter
                         borderColor: 'transparent'
                     }}
                 >
-                    SignIn
+                    Sign In
                 </Button>
             </motion.div>
         </div>

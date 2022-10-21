@@ -20,7 +20,7 @@ function Header() {
                     transition={{ duration: 0.3 }}
                 >
                     <Link to='/home' style={{ textDecoration: 'none',  }}>
-                        <AiOutlineHome size={34} className="icon" fill={primaryColor} />
+                        <AiOutlineHome size={'2rem'} className="icon" fill={primaryColor} />
                     </Link>
                 </motion.div>
 
@@ -33,7 +33,7 @@ function Header() {
                     transition={{ duration: 0.3 }}
                 >
                     <AiOutlineMenu
-                        size={34}
+                        size={'2rem'}
                         className="icon"
                         onClick={() => setShowOffcanvas(true)}
                         fill={primaryColor}

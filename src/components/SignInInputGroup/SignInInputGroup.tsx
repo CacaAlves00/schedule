@@ -22,7 +22,7 @@ function SignInInputGroup({username, setUsername, password, setPassword,
 
     return (
         <div>
-            <InputGroup className='mb-3'>
+            <InputGroup className='mb-4'>
                 <InputGroup.Text
                     className='inputGroup-sizing-default'
                     style={{
@@ -46,7 +46,7 @@ function SignInInputGroup({username, setUsername, password, setPassword,
                 />
             </InputGroup>
 
-            <InputGroup className='mb-3'>
+            <InputGroup className='mb-2'>
                 <InputGroup.Text
                     className='inputGroup-sizing-default'
                     style={{

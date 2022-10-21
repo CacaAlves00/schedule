@@ -1,9 +1,19 @@
 #calendar-date {
     width: 7%;
     margin: 1vh 3.625%;
+    padding: 1vw;
     border-radius: 5px;
     box-sizing: border-box;
-    padding: 1vw;
     cursor: pointer;
     border: 1px solid;
+    
+    @media screen and (max-height: 630px) {
+        padding: 0.8vw;
+        margin: 0.8vh 3.625%;
+    }
+
+    @media screen and (max-height: 560px) {
+        padding: 0.6vw;
+        margin: 0.8vh 3.625%;
+    }
 }

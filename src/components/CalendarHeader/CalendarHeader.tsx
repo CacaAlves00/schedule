@@ -31,7 +31,7 @@ function CalendarHeader({ date, setDate }: CalendarHeaderPropsInterface) {
             >
                 <AiOutlinePlus
                     className="icon"
-                    size={48}
+                    size={'3rem'}
                     fill={primaryColor}
                     onClick={openForm}
                 />

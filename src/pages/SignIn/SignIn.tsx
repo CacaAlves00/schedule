@@ -41,14 +41,13 @@ function SignIn() {
 
         const apiAnswer = await signInApi(username, password)
         if (apiAnswer.successful)
-            performLogin()
+            performSignIn()
         else
             setErrorMsg(apiAnswer.message ?? '')
     }
 
-    function performLogin() {
-        dispatch(login(username))
-        navigate('/home')
+    function performSignIn() {
+        navigate('/login')
     }
 
     return (

@@ -18,10 +18,10 @@ function LoginInputGroup({username, setUsername, password, setPassword}: LoginIn
     const backgroundColor = useSelector((state: ThemeStateInterface) => state.theme.backgroundColor)
 
     return (
-        <div>
-            <InputGroup className='mb-3'>
+        <div id="login-input-group">
+            <InputGroup className='login-input mb-3'>
                 <InputGroup.Text
-                    className='inputGroup-sizing-default'
+                    className='text inputGroup-sizing-default'
                     style={{
                         color: primaryColor,
                         backgroundColor,
@@ -32,6 +32,7 @@ function LoginInputGroup({username, setUsername, password, setPassword}: LoginIn
                 </InputGroup.Text>
                 <Form.Control
                     aria-label='Default'
+                    className="input"
                     aria-describedby='inputGroup-sizing-default'
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -43,9 +44,9 @@ function LoginInputGroup({username, setUsername, password, setPassword}: LoginIn
                 />
             </InputGroup>
 
-            <InputGroup className='mb-3'>
+            <InputGroup className='login-input mb-3'>
                 <InputGroup.Text
-                    className='inputGroup-sizing-default'
+                    className='text inputGroup-sizing-default'
                     style={{
                         color: primaryColor,
                         backgroundColor,
@@ -55,6 +56,7 @@ function LoginInputGroup({username, setUsername, password, setPassword}: LoginIn
                     Password
                 </InputGroup.Text>
                 <Form.Control
+                    className="input"
                     aria-label='Default'
                     aria-describedby='inputGroup-sizing-default'
                     value={password}

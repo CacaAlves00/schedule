@@ -1,5 +1,5 @@
 import React from 'react'
-import { CiAlarmOn, CiCalendar, CiForkAndKnife } from 'react-icons/ci'
+import { CiAlarmOn, CiCalendar } from 'react-icons/ci'
 
 import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../redux/theme'
@@ -21,10 +21,6 @@ function useGetData() {
         {
             title: 'calendar',
             children: <CiCalendar size={34} fill={primaryColor}  />
-        },
-        {
-            title: 'diet',
-            children: <CiForkAndKnife size={34} fill={primaryColor} />
         },
     
     ]
