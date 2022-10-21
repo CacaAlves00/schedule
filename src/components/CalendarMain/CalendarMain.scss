@@ -1,0 +1,21 @@
+#calendar-main {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 5vh;
+
+  #calendar-week-days {
+    display: flex;
+
+    .calendar-week-day {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  #calendar-dates {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}

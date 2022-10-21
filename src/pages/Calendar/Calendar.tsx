@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../redux/theme'
 import CalendarHeader from '../../components/CalendarHeader/CalendarHeader'
+import CalendarMain from '../../components/CalendarMain/CalendarMain'
 
 function Calendar() {
 
@@ -33,9 +34,7 @@ function Calendar() {
             >
                 <CalendarHeader date={date} setDate={setDate} />
 
-                <main>
-
-                </main>
+                <CalendarMain date={date} />
 
             </motion.div>
         </article>

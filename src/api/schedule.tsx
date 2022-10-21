@@ -50,7 +50,7 @@ let items: ScheduleObjectInterface[]= [
 ]
 
 export async function fetchSchedule(date: Date): Promise<ScheduleAPIAnswerInterface> {
-    const day = date.getUTCDay() + 1
+    const day = date.getUTCDay()
 
     const schedule4Today = items.filter(item => item.weekDay === day)
     
