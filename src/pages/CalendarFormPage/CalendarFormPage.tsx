@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import ScheduleForm from '../../components/ScheduleForm/ScheduleForm'
+import CalendarForm from '../../components/CalendarForm /CalendarForm'
 import useHandleNotLoggedIn from '../../hooks/useHandleNotLoggedIn'
 import { ThemeStateInterface } from '../../redux/theme'
-import './ScheduleFormPage.scss'
+import './CalendarFormPage.scss'
 
-function ScheduleFormPage() {
+function CalendarFormPage() {
 
 
     const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
@@ -16,20 +16,16 @@ function ScheduleFormPage() {
 
     useHandleNotLoggedIn()
 
-    function onSubmit() {
-        navigate('/schedule')
-    }
-
     return (
-        <article id="schedule-form-page"
+        <article id="calendar-form-page"
             style={{
                 border: '2px solid',
                 borderColor: `${primaryColor}`
             }}
         >
-            <ScheduleForm />
+            <CalendarForm />
         </article>
     )
 }
 
-export default ScheduleFormPage
+export default CalendarFormPage

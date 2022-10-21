@@ -9,6 +9,12 @@ import './index.scss'
 import App from './App'
 import login from './redux/login';
 
+function configureTimeZone() {
+  console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
+}
+
+configureTimeZone()
+
 const store = configureStore({
   reducer: {
     'theme': theme,

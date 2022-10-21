@@ -3,22 +3,24 @@ import { InputGroup, Form, Button, Alert } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login as loginApi, signIn as signInApi } from '../../api/login'
-import LoginButtonContainer from '../../components/LoginButtonContainer/LoginButtonContainer'
+import SignInButtonContainer from '../../components/SignInButtonContainer/SignInButtonContainer'
 import LoginInputGroup from '../../components/LoginInputGroup/LoginInputGroup'
 import { ThemeStateInterface } from '../../redux/theme'
 import { login, LoginStateInterface } from '../../redux/login'
 import { motion } from 'framer-motion'
-import './Login.scss'
+import './SignIn.scss'
+import SignInInputGroup from '../../components/SignInInputGroup/SignInInputGroup'
 
 const buttonStyles = {
     width: '13vw',
     margin: '0',
 }
 
-function Login() {
+function SignIn() {
 
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState<string>('')
     const [errorMsg, setErrorMsg] = useState<string>('')
 
     const isLoggedIn = useSelector((state: LoginStateInterface) => state.login.loggedIn)
@@ -32,11 +34,12 @@ function Login() {
     }, [])
 
     async function handleSignIn() {
-        navigate('/sign-in')
-    }
+        if (password !== passwordConfirmation) {
+            setErrorMsg('The passwords don\'t match')
+            return
+        }
 
-    async function handleLogin() {
-        const apiAnswer = await loginApi(username, password)
+        const apiAnswer = await signInApi(username, password)
         if (apiAnswer.successful)
             performLogin()
         else
@@ -72,19 +75,20 @@ function Login() {
                     )
                 }
 
-                <LoginInputGroup
+                <SignInInputGroup
                     username={username}
                     setUsername={setUsername}
                     password={password}
                     setPassword={setPassword}
+                    passwordConfirmation={passwordConfirmation}
+                    setPasswordConfirmation={setPasswordConfirmation}
                 />
 
-                <LoginButtonContainer handleLogin={handleLogin}
-                    handleSignIn={handleSignIn} />
+                <SignInButtonContainer handleSignIn={handleSignIn} />
 
             </motion.div>
         </article>
     )
 }
 
-export default Login
+export default SignIn

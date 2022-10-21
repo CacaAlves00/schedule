@@ -14,18 +14,18 @@ let items: ScheduleObjectInterface[]= [
     {
         name: 'Quinta',
         description: 'L ipsumLorem ipsumLorem ipsum',
-        weekDay: 4,
+        weekDay: 5,
         _id: '1'
     },
     {
         name: 'Quinta 2',
         description: 'L ipsumLorem ipsumLorem ipsum',
-        weekDay: 4,
+        weekDay: 5,
         _id: '12'
     },
     {
         name: 'Log2',
-        weekDay: 4,
+        weekDay: 5,
         description: 'Lorem ipsum',
         _id: '2'
     },
@@ -50,9 +50,10 @@ let items: ScheduleObjectInterface[]= [
 ]
 
 export async function fetchSchedule(date: Date): Promise<ScheduleAPIAnswerInterface> {
-    const day = date.getUTCDay()
+    const day = date.getUTCDay() + 1
 
     const schedule4Today = items.filter(item => item.weekDay === day)
+    console.log(schedule4Today)
     
     return await {
         successful: true,

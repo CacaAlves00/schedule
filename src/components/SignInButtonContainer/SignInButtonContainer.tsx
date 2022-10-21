@@ -3,28 +3,27 @@ import { Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import { ThemeStateInterface } from '../../redux/theme'
-import './LogginButtonContainer.scss'
+import './SignInButtonContainer.scss'
 
-interface LoginButtonContainerPropsInterface {
-    handleLogin: Function,
+interface SignInButtonContainerPropsInterface {
     handleSignIn: Function,
 }
 
-function LogginButtonContainer(props: LoginButtonContainerPropsInterface) {
+function SignInButtonContainer({ handleSignIn }: SignInButtonContainerPropsInterface) {
 
     const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
     const secondaryColor = useSelector((state: ThemeStateInterface) => state.theme.secondaryColor)
     const backgroundColor = useSelector((state: ThemeStateInterface) => state.theme.backgroundColor)
 
     return (
-        <div id='button-container'>
+        <div id='sign-in-button-container'>
             <motion.div
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.5 }}
             >
 
                 <Button
-                    onClick={() => props.handleSignIn()}
+                    onClick={() => handleSignIn()}
                     style={{
                         color: primaryColor,
                         borderColor: primaryColor,
@@ -40,17 +39,17 @@ function LogginButtonContainer(props: LoginButtonContainerPropsInterface) {
                 transition={{ duration: 0.5 }}
             >
                 <Button variant='success'
-                    onClick={() => props.handleLogin()}
+                    onClick={() => handleSignIn()}
                     style={{
                         backgroundColor: secondaryColor,
                         borderColor: 'transparent'
                     }}
                 >
-                    Login
+                    SignIn
                 </Button>
             </motion.div>
         </div>
     )
 }
 
-export default LogginButtonContainer
+export default SignInButtonContainer
