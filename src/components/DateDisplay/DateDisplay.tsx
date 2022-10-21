@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../redux/theme'
 import './DateDisplay.scss'
 
-interface DatePropsInterface {
+interface DateDisplayPropsInterface {
     date: Date,
     setDate: Function
 }
 
-function DateDisplay({ date, setDate }: DatePropsInterface) {
+function DateDisplay({ date, setDate }: DateDisplayPropsInterface) {
   
   const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor )
 

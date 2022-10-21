@@ -1,0 +1,21 @@
+#meal-display {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    
+    #display {
+        border: 2px solid;
+        border-radius: 5px;
+        width: 12vw;
+        padding: 0.3vh 1vw;
+        text-align: center;
+        font-size: 1rem;
+        user-select: none;
+    }
+
+    .icon {
+        cursor: pointer;
+    }
+}

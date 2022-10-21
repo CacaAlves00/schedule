@@ -1,0 +1,19 @@
+#diet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  #date-container {
+    display: flex;
+
+    & > * {
+      margin-left: 1vw;
+    }
+  }
+
+  .icon {
+    cursor: pointer;
+  }
+}

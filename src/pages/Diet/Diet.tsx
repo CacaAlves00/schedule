@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import ArticleHeader from '../../components/ArticleHeader/ArticleHeader'
+import ArticleHeader from '../../components/DietHeader/DietHeader'
 import './Diet.scss'
 
 function Diet() {

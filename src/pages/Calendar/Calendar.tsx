@@ -15,8 +15,6 @@ function Calendar() {
     const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
     useHandleNotLoggedIn()
 
-    const navigate = useNavigate()
-
     return (
         <article id="calendar">
             <motion.div
