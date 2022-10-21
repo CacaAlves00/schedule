@@ -10,9 +10,6 @@ function CalendarFormPage() {
 
 
     const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
-    const secondaryColor = useSelector((state: ThemeStateInterface) => state.theme.secondaryColor)
-
-    const navigate = useNavigate()
 
     useHandleNotLoggedIn()
 

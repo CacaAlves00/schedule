@@ -10,7 +10,7 @@ import './ScheduleTableItem.scss'
 interface ScheduleTableItemProps {
     name: string,
     description: string,
-    _id: string,
+    _id?: string,
     onDelete: Function
 }
 

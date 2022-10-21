@@ -3,7 +3,7 @@ import { Button, Offcanvas, OffcanvasBody } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../../redux/theme'
 import ThemeButtons from './ThemeButtons/ThemeButtons'
-import './Offcanvas.scss'
+import './HeaderOffcanvas.scss'
 import { logout } from '../../../redux/login'
 import { useNavigate } from 'react-router-dom'
 

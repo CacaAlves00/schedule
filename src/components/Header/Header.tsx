@@ -3,7 +3,7 @@ import { AiOutlineHome, AiOutlineMenu } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import './Header.scss'
-import Offcanvas from './Offcanvas/Offcanvas'
+import Offcanvas from './HeaderOffcanvas/HeaderOffcanvas'
 import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../redux/theme'
 

@@ -22,7 +22,6 @@ function ScheduleForm() {
     const weekDayToNumber = weekDays.indexOf(day ?? '') + 1
 
     addScheduleItem({
-      _id: 'asd',
       name: name ?? '',
       description: description ?? '',
       weekDay: weekDayToNumber

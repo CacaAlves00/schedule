@@ -1,0 +1,10 @@
+#calendar-offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    width: 100%;
+
+    & > button {
+        margin-top: 3vh;
+    }
+}

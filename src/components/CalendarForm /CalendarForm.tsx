@@ -8,28 +8,24 @@ import './CalendarForm.scss'
 import { useNavigate } from 'react-router-dom'
 
 import "react-datepicker/dist/react-datepicker.css"
+import { addCalendarItem } from '../../api/calendar'
 
 function CalendarForm() {
 
-  const [name, setName] = useState<string>()
-  const [description, setDescription] = useState<string>()
-  const [startDate, setStartDate] = useState<Date>(new Date())
+  const [name, setName] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
+  const [date, setDate] = useState<Date>(new Date())
 
   const secondaryColor = useSelector((state: ThemeStateInterface) => state.theme.secondaryColor)
 
   const navigate = useNavigate()
 
   function handleSubmit() {
-
-    // const weekDayToNumber = weekDays.indexOf(day ?? '') + 1
-
-    // addScheduleItem({
-    //   _id: 'asd',
-    //   name: name ?? '',
-    //   description: description ?? '',
-    //   weekDay: weekDayToNumber
-    // })
-
+    addCalendarItem({
+      event: name,
+      description: description,
+      date: date
+    })
     navigate('/calendar')
   }
 
@@ -43,7 +39,7 @@ function CalendarForm() {
         />
       </Form.Group>
 
-      <DatePicker className="mb-4" selected={startDate} onChange={(date: Date) => setStartDate(date)} />
+      <DatePicker className="mb-4" selected={date} onChange={(date: Date) => setDate(date)} />
 
       <Form.Group className="mb-3" controlId="description">
         <Form.Label>Description</Form.Label>
@@ -56,6 +52,7 @@ function CalendarForm() {
           onChange={(e: any) => setDescription(e.target.value)}
         />
       </Form.Group>
+
       <Button variant="primary" type="submit"
         style={{ backgroundColor: secondaryColor }}
         onClick={handleSubmit}

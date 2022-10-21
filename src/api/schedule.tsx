@@ -2,7 +2,7 @@ export interface ScheduleObjectInterface {
     name: string,
     description: string,
     weekDay: number,
-    _id: string
+    _id?: string
 }
 
 interface ScheduleAPIAnswerInterface {
@@ -24,29 +24,41 @@ let items: ScheduleObjectInterface[]= [
         _id: '12'
     },
     {
-        name: 'Log2',
-        weekDay: 5,
+        name: 'Segunda',
+        weekDay: 2,
         description: 'Lorem ipsum',
         _id: '2'
     },
     {
-        name: 'Log345',
+        name: 'Domingo',
         description: 'Lorem ipsum',
-        weekDay: 5,
+        weekDay: 1,
         _id: '3'
     },
     {
-        name: 'aaaaaaaaaaaaa',
+        name: 'Sábado',
         description: 'Lorem ipsum',
-        weekDay: 2,
+        weekDay: 7,
         _id: '4'
     },
     {
-        name: 'Log11111111111111111',
-        weekDay: 1,
+        name: 'Terça',
+        weekDay: 3,
         description: 'Lorem ipsum',
         _id: '5'
-    }
+    },
+    {
+        name: 'Quarta',
+        weekDay: 4,
+        description: 'Lorem ipsum',
+        _id: '5'
+    },
+    {
+        name: 'Sexta',
+        weekDay: 6,
+        description: 'Lorem ipsum',
+        _id: '5'
+    },
 ]
 
 export async function fetchSchedule(date: Date): Promise<ScheduleAPIAnswerInterface> {
@@ -61,7 +73,10 @@ export async function fetchSchedule(date: Date): Promise<ScheduleAPIAnswerInterf
     }
 }
 
-export async function deleteScheduleItem(_id: string): Promise<any> {
+export async function deleteScheduleItem(_id?: string): Promise<any> {
+    if (!_id)
+        return 
+    
     items = items.filter(item => item._id !== _id)
 }
 

@@ -60,7 +60,8 @@ function CalendarMain({ date }: CalendarMainPropsInterface) {
                     generateCalendarDatesArray().map(day => (
                         <CalendarDate 
                             key={`calendar-date-${day}`}
-                            date={(getNextNDays(firstDateOfTable, day))} />
+                            date={(getNextNDays(firstDateOfTable, day))} 
+                        />
                     ))
                 }
             </section>
