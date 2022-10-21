@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { ThemeStateInterface } from '../../redux/theme'
@@ -15,7 +15,7 @@ function CalendarMain({ date }: CalendarMainPropsInterface) {
 
     const [firstDateOfTable, setFirstDateOfTable] = useState<Date>(date)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         function getFirstDateOfTable() {
             const firstDateOfTable = 
                 new Date(date.getFullYear(), date.getMonth(), 1)
