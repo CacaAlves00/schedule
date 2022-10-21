@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import './Calendar.scss'
 import useHandleNotLoggedIn from '../../hooks/useHandleNotLoggedIn'
+import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { ThemeStateInterface } from '../../redux/theme'
+import CalendarHeader from '../../components/CalendarHeader/CalendarHeader'
 
 function Calendar() {
 
+    const [date, setDate] = useState<Date>(new Date())
+
+    const primaryColor = useSelector((state: ThemeStateInterface) => state.theme.primaryColor)
     useHandleNotLoggedIn()
+
+    const navigate = useNavigate()
 
     return (
         <article id="calendar">
@@ -22,6 +31,11 @@ function Calendar() {
                     duration: 0.7
                 }}
             >
+                <CalendarHeader date={date} setDate={setDate} />
+
+                <main>
+
+                </main>
 
             </motion.div>
         </article>
